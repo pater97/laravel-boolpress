@@ -6,3 +6,28 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body{
+    background-color: bisque;
+    #welcome_page{
+        .container{
+            background-color: bisque;
+        }
+    }
+    
+    #shop_page{
+        .col-md-4{
+            margin: 1rem 0;
+        }
+        img{
+            height: 20rem;
+        }
+    }
+
+    #show_product{
+        img{
+            width: 30rem;
+            border-radius: 20px;
+        }
+    }
+}

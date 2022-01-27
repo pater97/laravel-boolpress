@@ -10019,3 +10019,19 @@ h3 {
     border-color: #dee2e6;
   }
 }
+body {
+  background-color: bisque;
+}
+body #welcome_page .container {
+  background-color: bisque;
+}
+body #shop_page .col-md-4 {
+  margin: 1rem 0;
+}
+body #shop_page img {
+  height: 20rem;
+}
+body #show_product img {
+  width: 30rem;
+  border-radius: 20px;
+}
