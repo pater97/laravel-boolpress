@@ -17,7 +17,7 @@
                     {{-- bottone sinistra blog --}}
                     <div class="col-md-4 left_home">
                         <p class="lead d-flex justify-content-center">
-                            <a class="btn btn-success btn-lg " href="#" role="button">Dai un'occhiata al nosrtro blog</a>
+                            <a class="btn btn-success btn-lg " href="{{route('posts.index')}}" role="button">Dai un'occhiata al nosrtro blog</a>
                         </p>
                     </div>
                     {{-- bottone centrale shop --}}
