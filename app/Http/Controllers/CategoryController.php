@@ -10,8 +10,9 @@ class CategoryController extends Controller
 
     public function posts(Category $category)
     {
-        $posts = $category->posts()->orderByDesc('id');
-        return view('guest.categories.post', compact('posts', 'category'));
+        $posts = $category->posts()->orderByDesc('id')->get();
+        // ddd($posts);
+        return view('guest.categories.posts', compact('posts', 'category'));
     }
     /**
      * Display a listing of the resource.
