@@ -10035,3 +10035,8 @@ body #show_product img {
   width: 30rem;
   border-radius: 20px;
 }
+body #post_welcome .card img {
+  max-height: 9rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

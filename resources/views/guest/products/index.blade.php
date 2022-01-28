@@ -4,6 +4,9 @@
 @section('content')
 <section id="shop_page">
     <div class="container">
+        <h1 class="text-center">
+            I NOSTRI PRODOTTI
+        </h1>
         <div class="row g-2">
             
             @foreach($products as $product)

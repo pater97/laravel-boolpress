@@ -30,4 +30,12 @@ body{
             border-radius: 20px;
         }
     }
+    #post_welcome{
+        .card{
+            img{
+                max-height: 9rem;
+                object-fit: cover;
+            }
+        }
+    }
 }
