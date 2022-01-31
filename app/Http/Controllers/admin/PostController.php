@@ -40,16 +40,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $posts = new Post();
+        $validated = $request->validate([
+            'title' => ['required'],
+            'sub_title' => ['nullable'],
+            'description' => ['nullable'],
+            'category_id' => ['required', 'exists:categories,id'],
+            'image'=> ['required']
+        ]);
 
-        $posts->title = $request->title;
-        $posts->sub_title = $request->sub_title;
-        $posts->category_id = $request->category_id;
-        if ($request->file('image')) {
-            $posts->image = Storage::put('posts', $request->file('image'));
-        }
-        $posts->save();
+
+        // Salva
+        Post::create($validated);
+        // Genera slug
+        $validated['slug'] = Str::slug($validated['title']);
         // redirect
         return redirect()->route('admin.posts.index');
     }
