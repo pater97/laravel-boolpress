@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
     /**
@@ -39,18 +40,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => ['required'],
-            'image' => ['nullable'],
-            'sub_title' => ['nullable'],
-            'description' => ['nullable'],
-            'category_id' => ['required', 'exists:categories,id']
-        ]);
+        
+        $posts = new Post();
 
-        // Salva
-        Post::create($validated);
-        // Genera slug
-        $validated['slug'] = Str::slug($validated['title']);
+        $posts->title = $request->title;
+        $posts->sub_title = $request->sub_title;
+        $posts->category_id = $request->category_id;
+        if ($request->file('image')) {
+            $posts->image = Storage::put('posts', $request->file('image'));
+        }
+        $posts->save();
         // redirect
         return redirect()->route('admin.posts.index');
     }
