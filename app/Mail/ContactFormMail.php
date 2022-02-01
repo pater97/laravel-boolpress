@@ -29,8 +29,8 @@ class ContactForMail extends Mailable
     public function build()
     {
         return $this
-        ->from('abc@gmail.com')
+        ->from('noreplay@admin.com')
         ->subject('new lead 🐱‍🚀')
-        ->markdown('mail.contacts,lead');
+        ->markdown('mail.contacts.lead');
     }
 }

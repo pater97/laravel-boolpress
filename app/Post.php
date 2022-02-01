@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use App\User;
 use illuminate\database\eloquent\relations\belongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\belongsToMany;
 class Post extends Model
 {
     protected $fillable = ['title','slug','image','sub_title','description','category_id'];
