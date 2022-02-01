@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
-use App\user;
+use App\User;
 use illuminate\database\eloquent\relations\belongsTo;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
 class Post extends Model
 {
     protected $fillable = ['title','slug','image','sub_title','description','category_id'];
@@ -30,4 +30,5 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
 }

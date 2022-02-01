@@ -24,6 +24,8 @@ Route::get('categories/{category:slug}/posts', 'CategoryController@posts')->name
 
 Auth::routes();
 
+Route::get('contacts', 'pageController@contacts')->name('contacts');
+Route::post('contacts', 'pageController@SendContactForm')->name('contacts.send');
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
