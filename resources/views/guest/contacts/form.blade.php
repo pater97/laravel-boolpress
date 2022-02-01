@@ -11,7 +11,7 @@
           <strong>{{session('message')}}</strong>
         </div>
         @endif
-        <form action="{{route('contacts.send')}}">
+        <form action="{{route('contacts.send')}}" method="post">
             @csrf
             <div class="row my-5">
                 <div class="col">

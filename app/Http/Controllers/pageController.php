@@ -13,7 +13,7 @@ class pageController extends Controller
     }
     public function SendContactForm(Request $request){
 
-        ddd($request->all());
+        // ddd($request->all());
 
         $valdata = $request->validate([
             'name' => 'required|min:4|max:50',
