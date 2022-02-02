@@ -24,8 +24,8 @@ Route::resource('products', ProductController::class)->only(['index', 'show']);
 Route::resource('posts', PostController::class)->only(['index', 'show']);
 Route::get('categories/{category:slug}/posts', 'CategoryController@posts')->name('categories.posts');
 Route::get('/games', function () {
-    return view('guest.games.index')->name('games.index');
-});
+    return view('guest.games.index');
+})->name('games.index');
 
 //autenticazione
 Auth::routes();
