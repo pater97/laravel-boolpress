@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::resource('products', ProductController::class)->only(['index', 'show']);
 Route::resource('posts', PostController::class)->only(['index', 'show']);
+Route::resource('games', gameController::class)->only(['index', 'show']);
 Route::get('categories/{category:slug}/posts', 'CategoryController@posts')->name('categories.posts');
 
 Auth::routes();
@@ -34,5 +35,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
     Route::resource('products', ProductController::class);
     Route::resource('posts',PostController::class);
     Route::resource('categories',CategoryController::class);
+    Route::resource('games',CategoryController::class);
 
 });
