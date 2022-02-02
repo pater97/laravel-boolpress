@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\GameResource;
+use App\Game;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +19,21 @@ Route::get('/', function () {
 
     return view('guest.welcome');
 })->name('home');
-
+//guest
 Route::resource('products', ProductController::class)->only(['index', 'show']);
 Route::resource('posts', PostController::class)->only(['index', 'show']);
-Route::resource('games', gameController::class)->only(['index', 'show']);
 Route::get('categories/{category:slug}/posts', 'CategoryController@posts')->name('categories.posts');
+Route::get('/games', function () {
+    return view('guest.games.index')->name('games.index');
+});
 
+//autenticazione
 Auth::routes();
-
+//mail
 Route::get('contacts', 'pageController@contacts')->name('contacts');
 Route::post('contacts', 'pageController@SendContactForm')->name('contacts.send');
 
-
+//admin
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 
     Route::get('/', 'HomeController@index')->name('dashboard');

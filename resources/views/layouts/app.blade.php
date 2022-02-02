@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{{ route('admin.products.index') }}">Admin mode</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                            <a class="nav-link" href="{{ route('games.index') }}">games</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('contacts')}}">contacts</a>
